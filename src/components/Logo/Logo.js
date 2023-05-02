@@ -5,7 +5,7 @@ import brain from './brain.png';
 const Logo=({onRouteChange})=>{
     return(
         <div className="w-100 flex justify-center mb4">
-        <a href='#0' className='black pointer' 
+        <a href='#0' className='black pointer dim' 
         onClick={() => {
             onRouteChange('about')}}>
         <div className="flex justify-center">
