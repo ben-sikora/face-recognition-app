@@ -1,15 +1,21 @@
 import React from 'react'; 
-import Tilt from 'react-parallax-tilt';
 import './Logo.css';
 import brain from './brain.png';
 
 const Logo=()=>{
     return(
-    <Tilt tiltEnable={true} tiltReverse={true} >
-        <div className="tilt">
-          <img src={brain} alt="logo"/>
+        <div className="w-100 flex justify-center mb4">
+        <button type='submit'>
+        <div className="flex justify-center">
+            <img src={brain} alt="logo"/>
+          
+          <div>
+          <h1>FaceRec</h1>
+          <h1>App</h1>
           </div>
-    </Tilt>
+          </div>
+          </button>
+        </div>
     );
 }
 
