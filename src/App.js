@@ -120,6 +120,7 @@ class App extends Component {
         <Logo onRouteChange={this.onRouteChange}/>
         {this.state.route === "home" ? (
           <div>
+            <About />
             <Rank
               name={this.state.user.name}
               entries={this.state.user.entries}
