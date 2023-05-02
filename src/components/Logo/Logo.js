@@ -2,19 +2,20 @@ import React from 'react';
 import './Logo.css';
 import brain from './brain.png';
 
-const Logo=()=>{
+const Logo=({onRouteChange})=>{
     return(
         <div className="w-100 flex justify-center mb4">
-        <button type='submit'>
+        <a href='#0' className='black pointer' 
+        onClick={() => {
+            onRouteChange('about')}}>
         <div className="flex justify-center">
             <img src={brain} alt="logo"/>
           
           <div>
-          <h1>FaceRec</h1>
-          <h1>App</h1>
+          <h1 >FaceRec <br></br> App </h1>
           </div>
           </div>
-          </button>
+          </a>
         </div>
     );
 }

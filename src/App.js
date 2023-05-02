@@ -6,6 +6,7 @@ import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Rank from "./components/Rank/Rank";
 import SignIn from "./components/SignIn/SignIn";
 import Register from "./components/Register/Register";
+import About from "./components/About/About";
 import { Component } from "react";
 
 const initialState = {
@@ -101,7 +102,7 @@ class App extends Component {
   };
 
   onRouteChange = (route) => {
-    if (route === "signout") {
+    if (route === "signout" || route==="about") {
       this.setState(initialState);
     } else if (route === "home") {
       this.setState({ isSignedin: true });
@@ -116,9 +117,9 @@ class App extends Component {
           isSignedIn={this.state.isSignedin}
           onRouteChange={this.onRouteChange}
         />
+        <Logo onRouteChange={this.onRouteChange}/>
         {this.state.route === "home" ? (
           <div>
-            <Logo />
             <Rank
               name={this.state.user.name}
               entries={this.state.user.entries}
@@ -137,9 +138,10 @@ class App extends Component {
             loadUser={this.loadUser}
             onRouteChange={this.onRouteChange}
           />
+        ) : this.state.route === "about" ? (
+          <About />
         ) : (
           <div>
-          <Logo />
           <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           </div>
         )}
