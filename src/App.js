@@ -6,7 +6,6 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Rank from "./components/Rank/Rank";
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
-import ParticlesBg from 'particles-bg';
 import { Component } from 'react';
 
 
@@ -159,7 +158,6 @@ class App extends Component {
               <SignIn loadUser= {this.loadUser} onRouteChange={this.onRouteChange}/>
             )
           }
-          <ParticlesBg type="circle" bg={true} />
 
       </div>
     );
