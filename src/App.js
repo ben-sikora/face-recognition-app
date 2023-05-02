@@ -13,7 +13,7 @@ const initialState = {
   input: "",
   imageURL: "",
   box: {},
-  route: "signin",
+  route: "about",
   isSignedin: false,
   user: {
     id: "",
@@ -80,7 +80,8 @@ class App extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        if (response) {
+        if (response && this.state.route !== 'about') {
+          console.log('GOING HERE')
           fetch("http://localhost:3000/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
@@ -120,7 +121,6 @@ class App extends Component {
         <Logo onRouteChange={this.onRouteChange}/>
         {this.state.route === "home" ? (
           <div>
-            <About />
             <Rank
               name={this.state.user.name}
               entries={this.state.user.entries}
@@ -140,7 +140,17 @@ class App extends Component {
             onRouteChange={this.onRouteChange}
           />
         ) : this.state.route === "about" ? (
-          <About />
+          <div>
+            <About />
+            <ImageLinkForm
+                onInputChange={this.onInputChange}
+                onButtonSubmit={this.onSubmit}
+              />
+              <FaceRecognition
+                box={this.state.box}
+                imageURL={this.state.imageURL}
+              />
+          </div>
         ) : (
           <div>
           <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
