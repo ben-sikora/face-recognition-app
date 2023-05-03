@@ -5,7 +5,8 @@ class SignIn extends React.Component{
     super(); 
     this.state={
       signInEmail: '', 
-      signInPassword: ''
+      signInPassword: '',
+      error: false
     }
   }
 
@@ -31,6 +32,9 @@ class SignIn extends React.Component{
         this.props.onRouteChange('home'); 
       }
       return; 
+    }).catch((err)=>{
+      console.log(err)
+      this.setState({error: true})
     });
   }
 
@@ -38,7 +42,7 @@ class SignIn extends React.Component{
     const {onRouteChange}= this.props; 
   return (
     <article className="br3 ba b--black-130 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-      <main className="pa4 black-80">
+      <main className="mt4 mb4 black-80 w5">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
             <legend className="f1 fw6 ph0 mh0">Sign In</legend>
             <div className="mt3">
@@ -80,6 +84,13 @@ class SignIn extends React.Component{
               Register
             </a>
           </div>
+          {this.state.error ? (
+                <div className=''>  
+                <p className="red">There was an error signing in. Please try again.</p>
+                </div>
+              ): (
+                <div />
+          )}
       </main>
     </article>
   );
