@@ -1,8 +1,8 @@
 # FaceRec
 
-FaceRec is an web application that will use the Clarifai API to identify faces on any image link. It implements profile creation/authentication where users can track how many images they have submitted. 
+FaceRec is a web application using the Clarifai API to identify faces on any image link. It implements profile creation/authentication where users can track how many images they have submitted. 
 
-This particular repository is face-rec's fronted which uses React and the create-react-app framework. The app is hosted on OnRender. It handles all user authentication and api calls with the backend [face-rec-api](https://github.com/ben-sikora/face-recognition-api)
+This particular repository is FaceRec's fronted which uses React and the create-react-app framework. The app is hosted on OnRender. It handles all user authentication and API calls with the backend [face-rec-api](https://github.com/ben-sikora/face-recognition-api)
 
 This project was created along an Udemy Course, which can be found [here](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/)
 
